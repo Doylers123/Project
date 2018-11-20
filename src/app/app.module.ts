@@ -13,9 +13,12 @@ import { MatInputModule,
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
-  MatExpansionModule} from '@angular/material';
+  MatExpansionModule,
+  MatDatepickerModule,
+  MatNativeDateModule} from '@angular/material';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { TravelComponent } from './travel/travel.component';
 
 const appRoutes: Routes = [
   {
@@ -25,6 +28,10 @@ const appRoutes: Routes = [
   {
     path: 'create',
     component: PostCreateComponent
+  },
+  {
+    path: 'travel',
+    component: TravelComponent
   },
   {
     path: 'edit/:id',
@@ -38,7 +45,8 @@ const appRoutes: Routes = [
     AppComponent,
     PostDetailsComponent,
     PostCreateComponent,
-    PostEditComponent
+    PostEditComponent,
+    TravelComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -53,7 +61,9 @@ const appRoutes: Routes = [
   MatButtonModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDatepickerModule,
+  MatNativeDateModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
