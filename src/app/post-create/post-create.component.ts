@@ -15,11 +15,8 @@ date : Date;
     if (!form.valid)
       return;
       console.log(form.value.date);
-
-      this.date = new Date(form.value.date);
-      console.log(this.date.toDateString());
     
-      this.service.addPost(form.value.title, form.value.content).subscribe();
+      this.service.addPost(form.value.title, form.value.content, form.value.date).subscribe();
 
     console.log(form.value);
     form.resetForm();

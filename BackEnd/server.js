@@ -10,7 +10,8 @@ mongoose.connect(mongoDB);
 var Schema = mongoose.Schema;
 var postSchema = new Schema({
     title: String,
-    content: String
+    content: String,
+    date: Date
 })
 var PostModel = mongoose.model('post', postSchema);
 
@@ -41,10 +42,12 @@ app.post('/api/posts', function(req, res){
     console.log("post successful");
     console.log(req.body.title);
     console.log(req.body.content);
+    console.log(req.body.date);
 
     PostModel.create({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        date: req.body.date
     });
     res.send('Item added');
 
