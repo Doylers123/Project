@@ -29,7 +29,7 @@ export class PostEditComponent implements OnInit {
     });
   }
   onEditPost(form: NgForm) {
-    this.service.updatePost(this.post._id, form.value.title, form.value.content).subscribe(() =>
+    this.service.updatePost(this.post._id, form.value.title, form.value.content, form.value.date).subscribe(() =>
     {
       this.router.navigate(['/list']);
     });

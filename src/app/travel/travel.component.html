@@ -1,29 +1,29 @@
-<mat-card>
-  <form (submit)="onEditPost(postForm)" #postForm="ngForm">
+<mat-card class="main-style">
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="title"
-        ngModel={{post.title}}
-        required
-        #title="ngModel"
-        >
+      <input matInput placeholder="Show Title"  type="text" name="title" ngModel required  #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter a Show title.</mat-error>
     </mat-form-field>
+    <br>
     <mat-form-field>
-      <textarea
-        matInput
-        rows="4"
-        name="content"
-        ngModel={{post.content}}
-        required
-        #content="ngModel">
-      </textarea>
-      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+      <textarea matInput placeholder="Show Info"  rows="1" name="info" ngModel required #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please show info.</mat-error>
     </mat-form-field>
-    <button
-      mat-raised-button
-      color="accent"
-      type="submit">Update Post</button>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Season(s)"  type="text" name="snum" ngModel required  #title="ngModel">
+        <mat-error *ngIf="title.invalid">Season(s).</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <textarea matInput placeholder="Episodes"  rows="1" name="epnum" ngModel required #content="ngModel"></textarea>
+        <mat-error *ngIf="content.invalid">Episodes.</mat-error>
+      </mat-form-field>
+      
+    <br>
+    <button mat-raised-button color="accent" type="submit">Save Entry</button>
+    <br>
+
+
   </form>
 </mat-card>

@@ -19,6 +19,7 @@ import { MatInputModule,
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
 import { TravelComponent } from './travel/travel.component';
+import { ShowsComponent } from './shows/shows.component';
 
 const appRoutes: Routes = [
   {
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
     component: TravelComponent
   },
   {
+    path: 'shows',
+    component: ShowsComponent
+  },
+  {
     path: 'edit/:id',
     component: PostEditComponent
   }
@@ -46,7 +51,8 @@ const appRoutes: Routes = [
     PostDetailsComponent,
     PostCreateComponent,
     PostEditComponent,
-    TravelComponent
+    TravelComponent,
+    ShowsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -28,8 +28,8 @@ export class ShowService {
     return this.http.get("http://localhost:8081/api/shows/"+id);
   }
 
-  updatePost(id:String, title: string, epnum: string, snum: string, info: string): Observable<any> {
-    const show: Show = {title: title, epnum: epnum, snum: snum, info: info};
-  return this.http.put("http://localhost:8081/api/shows/"+id, show);
+  updatePost(id:String, title: string, info: string, snum: string, epnum: string): Observable<any> {
+    const show: Show = {title: title, info: info, snum: snum, epnum: epnum};
+  return this.http.put("http://localhost:8081/api/show/"+id, show);
   }
 }

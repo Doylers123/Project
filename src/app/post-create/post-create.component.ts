@@ -12,11 +12,12 @@ export class PostCreateComponent implements OnInit {
   constructor(private service: PostService) { }
 date : Date;
   onAddPost(form: NgForm) {
+    var dateString = form.value.date.toDateString();
     if (!form.valid)
       return;
       console.log(form.value.date);
     
-      this.service.addPost(form.value.title, form.value.content, form.value.date).subscribe();
+      this.service.addPost(form.value.title, form.value.content, dateString).subscribe();
 
     console.log(form.value);
     form.resetForm();

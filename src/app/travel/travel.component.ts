@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { PostService } from '../services/post.service';
+import { ShowService } from '../services/show.services';
 
 @Component({
   selector: 'app-travel',
@@ -9,17 +9,18 @@ import { PostService } from '../services/post.service';
 })
 export class TravelComponent implements OnInit {
 
-  constructor(private service: PostService) { }
-  date : Date;
+  constructor(private service: ShowService) { }
     onAddPost(form: NgForm) {
       if (!form.valid)
         return;
         console.log(form.value.date);
       
-        this.service.addPost(form.value.title, form.value.content, form.value.date).subscribe();
+        this.service.addPost(form.value.show, form.value.info, form.value.snum, form.value.epnum ).subscribe();
   
       console.log(form.value);
       form.resetForm();
+
+      
     }
 
   ngOnInit() {
