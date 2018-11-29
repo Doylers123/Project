@@ -1,23 +1,23 @@
 <mat-card class="main-style">
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <mat-form-field>
-      <input matInput placeholder="Show Title"  type="text" name="title" ngModel required  #title="ngModel">
-      <mat-error *ngIf="title.invalid">Please enter a Show title.</mat-error>
+      <textarea matInput placeholder="Show Title"  type="text" name="name" ngModel required  #name="ngModel"></textarea>
+      <mat-error *ngIf="name.invalid">Please enter a Show title.</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <textarea matInput placeholder="Show Info"  rows="1" name="info" ngModel required #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please show info.</mat-error>
+      <textarea matInput placeholder="Information"  rows="1" name="info" ngModel required #info="ngModel"></textarea>
+      <mat-error *ngIf="info.invalid">Please show info.</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="Season(s)"  type="text" name="snum" ngModel required  #title="ngModel">
-        <mat-error *ngIf="title.invalid">Season(s).</mat-error>
+        <input matInput placeholder="Season(s)"  type="number" name="snum" ngModel required  #snum="ngModel">
+        <mat-error *ngIf="snum.invalid">Season(s).</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <textarea matInput placeholder="Episodes"  rows="1" name="epnum" ngModel required #content="ngModel"></textarea>
-        <mat-error *ngIf="content.invalid">Episodes.</mat-error>
+        <input matInput placeholder="Episodes"  type="number" name="epnum" ngModel required #epnum="ngModel">
+        <mat-error *ngIf="epnum.invalid">Episodes.</mat-error>
       </mat-form-field>
       
     <br>

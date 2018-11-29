@@ -21,6 +21,7 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { TravelComponent } from './travel/travel.component';
 import { ShowsComponent } from './shows/shows.component';
 
+
 const appRoutes: Routes = [
   {
     path: 'list',
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     PostCreateComponent,
     PostEditComponent,
     TravelComponent,
-    ShowsComponent
+    ShowsComponent,
+    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

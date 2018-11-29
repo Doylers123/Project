@@ -15,7 +15,7 @@ export class TravelComponent implements OnInit {
         return;
         console.log(form.value.date);
       
-        this.service.addPost(form.value.show, form.value.info, form.value.snum, form.value.epnum ).subscribe();
+        this.service.addPost(form.value.name, form.value.info, form.value.snum, form.value.epnum ).subscribe();
   
       console.log(form.value);
       form.resetForm();

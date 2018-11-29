@@ -15,8 +15,8 @@ export class ShowService {
       return this.http.get("http://localhost:8081/api/shows");
     }
 
-  addPost(title: string, epnum: string, snum: string, info: string): Observable<any> {
-    const show: Show = {title: title, epnum: epnum, snum: snum, info: info};
+  addPost(name: string, info: string, snum: number, epnum: number): Observable<any> {
+    const show: Show = {name: name, info: info, snum: snum, epnum: epnum, };
     return this.http.post("http://localhost:8081/api/shows",show);
   }
 
@@ -28,8 +28,8 @@ export class ShowService {
     return this.http.get("http://localhost:8081/api/shows/"+id);
   }
 
-  updatePost(id:String, title: string, info: string, snum: string, epnum: string): Observable<any> {
-    const show: Show = {title: title, info: info, snum: snum, epnum: epnum};
-  return this.http.put("http://localhost:8081/api/show/"+id, show);
+  updatePost(id:String, name: string, info: string, snum: number, epnum: number): Observable<any> {
+      const show: Show = {name: name, info: info, snum: snum, epnum: epnum};
+    return this.http.put("http://localhost:8081/api/shows/"+id, show);
   }
 }

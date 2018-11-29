@@ -25,9 +25,6 @@ date : Date;
 
 
   ngOnInit() {
-
-
-
-  }
+}
 
 }

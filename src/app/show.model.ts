@@ -1,6 +1,6 @@
 export interface Show {
-    title: string;
-    epnum: string;
-    snum: string;
+    name: string;
     info: string;
+    snum: number;
+    epnum: number;
   }

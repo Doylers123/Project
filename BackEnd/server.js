@@ -22,10 +22,10 @@ var postSchema = new Schema({
 
 //Format for Shows
 var showSchema = new Schema({
-    title: String,
+    name: String,
     info: String,
-    epnum: String,
-    snum: String
+    snum: String,
+    epnum: String
 })
 
 //mlab Data
@@ -47,15 +47,15 @@ app.use(function(req, res, next) {
     //Shows
     app.post('/api/shows', function(req, res){
         console.log("post successful");
-        console.log(req.body.title);
+        console.log(req.body.name);
         console.log(req.body.info);
         console.log(req.body.snum);
         console.log(req.body.epnum);
         
     
         ShowsModel.create({
-            title: req.body.title,
-            content: req.body.info,
+            show: req.body.name,
+            info: req.body.info,
             snum: req.body.snum,
             epnum: req.body.epnum
             
@@ -134,10 +134,11 @@ app.put('/api/posts/:id', function(req, res){
 
 app.put('/api/shows/:id', function(req, res){
     console.log("Update Post" +req.params.id);
-    console.log(req.body.title);
+    console.log(req.body.name);
     console.log(req.body.info);
-    console.log(req.body.epnum);
     console.log(req.body.snum);
+    console.log(req.body.epnum);
+    
 
     ShowsModel.findByIdAndUpdate(req.params.id, req.body, 
         function(err, data){
