@@ -1,9 +1,9 @@
 <mat-toolbar color="accent">Entries</mat-toolbar>
-<mat-accordion multi="true" *ngIf="posts.length > 0">
+<mat-accordion multi="true">
   <mat-expansion-panel [expanded]="false" *ngFor="let show of shows">
-    <mat-expansion-panel-header>
-      {{ show.name }}
-    </mat-expansion-panel-header>
+      <mat-expansion-panel-header>
+        {{ show.name }}
+      </mat-expansion-panel-header>
     <p><b>Info</b></p>
     <p>{{ show.info }}</p>
     <p><b>Seasons</b> </p>
@@ -15,4 +15,3 @@
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p> 

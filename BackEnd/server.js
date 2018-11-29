@@ -24,8 +24,8 @@ var postSchema = new Schema({
 var showSchema = new Schema({
     name: String,
     info: String,
-    snum: String,
-    epnum: String
+    snum: Number,
+    epnum: Number
 })
 
 //mlab Data
@@ -54,7 +54,7 @@ app.use(function(req, res, next) {
         
     
         ShowsModel.create({
-            show: req.body.name,
+            name: req.body.name,
             info: req.body.info,
             snum: req.body.snum,
             epnum: req.body.epnum
@@ -70,12 +70,12 @@ app.use(function(req, res, next) {
         console.log("post successful");
         console.log(req.body.title);
         console.log(req.body.content);
-        console.log(req.body.dateString);
+        console.log(req.body.date);
 
     PostModel.create({
         title: req.body.title,
         content: req.body.content,
-        date: req.body.dateString
+        date: req.body.date
     });
     res.send('Entry added');
 
@@ -124,7 +124,7 @@ app.put('/api/posts/:id', function(req, res){
     console.log("Update Post" +req.params.id);
     console.log(req.body.title);
     console.log(req.body.content);
-    console.log(req.body.dateString)
+    console.log(req.body.date)
 
     PostModel.findByIdAndUpdate(req.params.id, req.body, 
         function(err, data){
