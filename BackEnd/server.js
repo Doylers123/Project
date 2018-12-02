@@ -119,7 +119,7 @@ app.get('/api/shows/:id', function(req, res){
         });
 })
 
-
+//Entries
 app.put('/api/posts/:id', function(req, res){
     console.log("Update Post" +req.params.id);
     console.log(req.body.title);
@@ -132,6 +132,7 @@ app.put('/api/posts/:id', function(req, res){
         })
 })
 
+//Shows
 app.put('/api/shows/:id', function(req, res){
     console.log("Update Post" +req.params.id);
     console.log(req.body.name);

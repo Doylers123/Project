@@ -10,9 +10,14 @@ import { PostService } from '../services/post.service';
 export class PostCreateComponent implements OnInit {
 
   constructor(private service: PostService) { }
+
+  //Adding Date
 date : Date;
+
   onAddPost(form: NgForm) {
+
     var dateString = form.value.date.toDateString();
+    
     if (!form.valid)
       return;
       console.log(form.value.date);

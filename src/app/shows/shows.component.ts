@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './shows.component.html',
   styleUrls: ['./shows.component.css']
 })
+
 export class ShowsComponent implements OnInit {
 
 

@@ -1,8 +1,9 @@
-<mat-toolbar color="accent">Entries</mat-toolbar>
+<mat-toolbar color="accent">Shows</mat-toolbar>
 <mat-accordion multi="true">
   <mat-expansion-panel [expanded]="false" *ngFor="let show of shows">
       <mat-expansion-panel-header>
-        {{ show.name }}
+        <p><b>Show Title:   </b></p>
+        <p>{{ show.name }}</p>
       </mat-expansion-panel-header>
     <p><b>Info</b></p>
     <p>{{ show.info }}</p>
@@ -11,7 +12,6 @@
     <p><b>Episodes</b></p>
     <p>{{ show.epnum }}</p>
     <mat-action-row>
-      <button mat-button (click)="onDelete(show._id)" color="warn">DELETE</button>
-    </mat-action-row>
+      <button mat-button (click)="onDelete(show._id)" color="warn">DELETE</button>    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
